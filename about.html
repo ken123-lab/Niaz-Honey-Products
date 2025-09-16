@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="About Niaz Honey Pot Ltd - Pure honey and natural products from West Nile">
+<meta name="author" content="Mr Ken">
+<title>About Us | Niaz Honey Pot Ltd</title>
+<link rel="icon" type="image/png" href="niaz.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#fff8dc;color:#333;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+
+/* Header */
+header{position: sticky; top:0; z-index:1000;background: rgba(34,139,34,0.95); color:white; display:flex; justify-content:space-between; align-items:center; padding:10px 20px; flex-wrap:wrap;}
+header h1{font-size:2rem; cursor:pointer; transition:0.3s;}
+header h1:hover{color:#ffd700; transform:scale(1.05);}
+nav{display:flex; flex-wrap:wrap; justify-content:center; gap:15px;}
+nav a{padding:8px 12px; color:white; font-weight:500; border-radius:5px; transition:0.3s;}
+nav a:hover, nav a.active{color:#ffd700; border-bottom:2px solid #ffd700; background:rgba(255,255,255,0.1);}
+.hamburger{display:none; flex-direction:column; cursor:pointer; gap:5px;}
+.hamburger div{width:25px; height:3px; background:white; border-radius:2px;}
+
+/* Sections with small space around images */
+section{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  overflow:hidden;
+  min-height:100vh;
+  margin:10px;
+  border-radius:8px;
+  padding:50px 20px;
+}
+section::before{
+  content:"";
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.4);
+  border-radius:8px;
+}
+section .content{
+  position:relative;
+  max-width:800px;
+  z-index:1;
+}
+section h2{font-size:2.5rem; margin-bottom:20px;}
+section p{font-size:1.1rem; line-height:1.7; text-align:justify; margin-bottom:15px;}
+
+/* Backgrounds full coverage */
+#award1{background:url('B1.webp') center center/cover no-repeat;}
+#award2{background:url('B2.webp') center center/cover no-repeat;}
+#award3{background:url('B3.webp') center center/cover no-repeat;}
+#award4{background:url('B4.webp') center center/cover no-repeat;}
+
+/* Fun Fact Box with animation */
+.fun-fact{
+  position:relative;
+  background:rgba(255,215,0,0.85);
+  color:#333;
+  padding:15px 20px;
+  margin:10px auto;
+  width:calc(100% - 40px);
+  max-width:none;
+  border-radius:12px;
+  font-weight:500;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.8s ease;
+}
+.fun-fact.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Footer */
+footer{background:green; color:white; text-align:center; padding:20px;}
+footer a{color:white; margin:0 10px; transition:0.3s;}
+footer a:hover{color:#ffd700;}
+
+/* Responsive */
+@media(max-width:768px){section h2{font-size:2rem;} section p{font-size:1rem;}}
+@media(max-width:480px){section h2{font-size:1.6rem;} section p{font-size:0.95rem;}}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Niaz Honey Pot Ltd</h1>
+<div class="hamburger" onclick="toggleMenu()">
+<div></div>
+<div></div>
+<div></div>
+</div>
+<nav id="navMenu">
+<a href="index.html">Home</a>
+<a href="about.html" class="active">About Us</a>
+<a href="product.html">Products</a>
+<a href="health.html">Health Benefits</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+</header>
+
+<!-- Section 1: Founder Story -->
+<section id="award2">
+<div class="content">
+<h2>Our Founder</h2>
+<p>Niaz Honey Pot Ltd was started in <strong>2016</strong> with a deep passion for pure honey and sustainable beekeeping. From the very beginning, our founder aimed to produce high-quality natural products while protecting the environment and empowering local communities.</p>
+<p>She leads a team of 5 dedicated staff (3 women, 2 men), mentors 30 eager trainees, and works with 4 casual laborers — all committed to producing the finest honey in West Nile. Every day, they ensure the bees are healthy, the honey is pure, and the production process is eco-friendly.</p>
+<p>Over the years, our founder has visited numerous beekeeping farms and sustainability projects, learning the best practices from around the world and implementing them locally. Her dedication extends beyond honey production — she actively supports training programs and community development initiatives, creating opportunities for aspiring farmers and young entrepreneurs.</p>
+</div>
+</section>
+
+<!-- Fun Fact after Founder Section -->
+<div class="fun-fact">🐝 A single honeybee produces only about 1/12th of a teaspoon of honey in its lifetime.</div>
+
+<!-- Section 2: First Award -->
+<section id="award1">
+<div class="content">
+<h2>2018: Most Outstanding Student in Beekeeping</h2>
+<p>In 2018, our founder was honored with the "Most Outstanding Student in Beekeeping" award in China. This achievement was not just a personal milestone but a reflection of her dedication, hard work, and the innovative methods she applied in hive management and honey production.</p>
+<p>The award opened doors to international networks, research opportunities, and collaborations with experienced beekeepers. It strengthened her vision of combining traditional knowledge with modern techniques to produce honey that is both pure and sustainably harvested.</p>
+<p>Even today, the lessons learned during this experience continue to guide the company’s practices, ensuring every product meets the highest standards of quality and purity.</p>
+</div>
+</section>
+
+<!-- Fun Fact after 2018 Award -->
+<div class="fun-fact">🍯 Our honey wine ferments naturally — no artificial additives, preserving the pure taste of honey.</div>
+
+<!-- Section 3: Regional Award -->
+<section id="award3">
+<div class="content">
+<h2>2024: Best Farmer – West Nile</h2>
+<p>After years of dedication and sustainable practices, Niaz Honey Pot Ltd was recognized locally in 2024 as the "Best Farmer" in West Nile. This award celebrated not only the superior quality of our honey but also our commitment to environmental stewardship and community development.</p>
+<p>Through careful hive management, responsible harvesting, and eco-friendly farming practices, our team ensures that the bees thrive, the environment is protected, and local communities benefit. We continue to innovate while preserving traditional methods that make our products unique and healthy.</p>
+<p>Receiving this award has motivated us to expand our programs, support more trainees, and raise awareness about the importance of sustainable beekeeping in Uganda and beyond.</p>
+</div>
+</section>
+
+<!-- Fun Fact after 2024 Award -->
+<div class="fun-fact">🍯 Beeswax jelly nourishes skin naturally and keeps it soft and glowing.</div>
+
+<!-- Section 4: Innovation Award -->
+<section id="award4">
+<div class="content">
+<h2>2025: Best Innovator</h2>
+<p>In 2025, Niaz Honey Pot Ltd was honored with the "Best Innovator" award. This recognition reflects our continuous drive to explore new ideas, develop unique products, and implement cutting-edge techniques in natural product production.</p>
+<p>From experimenting with honey wine fermentation to creating nourishing beeswax skincare products, we consistently strive to bring the best natural solutions to our customers. Our innovation is rooted in sustainability, quality, and community impact, ensuring that every product has a story and a positive footprint.</p>
+<p>Looking forward, we are committed to scaling up our operations responsibly, educating more trainees, and inspiring the next generation of beekeepers and innovators. This award is a testament to the dedication of our founder, staff, and trainees who work tirelessly to make Niaz Honey Pot Ltd a benchmark of excellence in West Nile and beyond.</p>
+</div>
+</section>
+
+<!-- Fun Fact after 2025 Award -->
+<div class="fun-fact">🌱 All our products are sustainably harvested, ensuring bees and environment thrive.</div>
+
+<footer>
+<p>&copy; 2025 Niaz Honey Pot Ltd | All Rights Reserved</p>
+
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('navMenu').classList.toggle('show');}
+
+// Scroll animations for fun facts
+const funFacts = document.querySelectorAll('.fun-fact');
+const appearOptions = {threshold:0.1, rootMargin:"0px 0px -50px 0px"};
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+
+funFacts.forEach(fact => appearOnScroll.observe(fact));
+</script>
+
+</body>
+</html>

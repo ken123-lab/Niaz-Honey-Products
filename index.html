@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Niaz Honey Pot Ltd - Pure honey and natural products from West Nile">
+<meta name="author" content="Mr Ken">
+<title>Niaz Honey Pot Ltd</title>
+<link rel="icon" type="image/png" href="niaz.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#fff8dc;color:#333;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;transition: transform 0.3s ease;}
+
+header{position: sticky; top:0; z-index:1000;background: rgba(34,139,34,0.95); color:white; display:flex; justify-content:space-between; align-items:center; padding:10px 20px; flex-wrap:wrap;}
+header h1{font-size:2rem; transition: transform 0.4s ease, color 0.3s ease; cursor:pointer;}
+header h1:hover{transform: scale(1.05); color:#ffd700; animation: h1bounce 0.6s;}
+@keyframes h1bounce{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+nav{display:flex; flex-wrap:wrap; justify-content:center; gap:15px;}
+nav a{padding:8px 12px; color:white; font-weight:500; transition:0.3s; border-radius:5px;}
+nav a:hover, nav a.active{color:#ffd700; border-bottom:2px solid #ffd700; background:rgba(255,255,255,0.1);}
+.hamburger{display:none; flex-direction:column; cursor:pointer; gap:5px;}
+.hamburger div{width:25px; height:3px; background:white; border-radius:2px;}
+
+.hero{height:60vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:white; position:relative; background: url('IMG4.webp') center/cover no-repeat;}
+.hero::before{content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4);}
+.hero-content{position:relative; z-index:1; max-width:800px; padding:0 15px;}
+.hero h2{font-size:2.5rem; margin-bottom:15px; animation: fadeIn 1s ease;}
+.hero p{font-size:1.2rem; margin-bottom:20px; animation: fadeIn 1.2s ease;}
+@keyframes fadeIn{from{opacity:0; transform: translateY(20px);} to{opacity:1; transform:translateY(0);}}
+.hero button{background:#ffd700; border:none; padding:12px 25px; font-size:1rem; cursor:pointer; border-radius:6px; transition:0.3s;}
+.hero button:hover{background:#e6c200;}
+.hero:hover{transform: scale(1.02);}
+
+.about{display:flex; flex-wrap:wrap; justify-content:space-around; padding:50px 20px; background:#fffbe6; gap:20px;}
+.about .card{flex:1 1 280px; padding:25px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); text-align:center; transition:0.3s; min-height:380px; background-size:cover; background-position:center; background-repeat:no-repeat; color:white; text-shadow:0 1px 3px rgba(0,0,0,0.7); opacity:0; transform:translateY(20px);}
+.about .card.visible{opacity:1; transform:translateY(0); transition: all 0.8s ease;}
+.about .card:hover{transform: scale(1.03); box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+.about h3{margin-bottom:10px;}
+.about p{font-size:1rem; line-height:1.6;}
+
+.products{padding:50px 20px; max-width:1200px; margin:0 auto;}
+.products h2{text-align:center; color:green; margin-bottom:30px; font-size:2rem;}
+.products-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+.product-card{border-radius:12px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:0.3s; cursor:pointer; display:flex; flex-direction:column; max-height:460px; opacity:0; transform:translateY(20px);}
+.product-card.visible{opacity:1; transform:translateY(0); transition: all 0.8s ease;}
+.product-card img{width:100%; height:240px; object-fit:cover;}
+.product-card .info{padding:15px; background:white; flex:1;}
+.product-card:hover{transform:scale(1.05);}
+
+.benefits{padding:50px 20px; text-align:center; background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('IMG5.webp') center/cover no-repeat;}
+.benefits h2{color:green; margin-bottom:30px; font-size:2rem;}
+.benefit-cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px;}
+.benefit-card{background:#fdf5e6; border-radius:12px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; opacity:0; transform:translateY(20px);}
+.benefit-card.visible{opacity:1; transform:translateY(0); transition: all 0.8s ease;}
+.benefit-card:hover{transform: scale(1.05); box-shadow:0 6px 20px rgba(0,0,0,0.15); background: rgba(253,245,230,0.95);}
+.benefit-card h4{color:green; margin-bottom:10px;}
+.benefit-card p{font-size:0.95rem;}
+
+footer{background:green; color:white; text-align:center; padding:20px;}
+footer a{color:white; margin:0 10px; transition:0.3s;}
+footer a:hover{color:#ffd700;}
+
+@media(max-width:1024px){.hero h2{font-size:2.2rem;}.hero p{font-size:1.1rem;}.product-card img{height:220px;}}
+@media(max-width:768px){header{flex-direction:row; justify-content:space-between; align-items:center;} nav{flex-direction:column; display:none; width:100%; gap:10px; margin-top:10px;} nav.show{display:flex;} .hamburger{display:flex;} .about{flex-direction:column;} .hero{height:50vh;} .hero h2{font-size:2rem;} .hero p{font-size:1rem;} .product-card img{height:200px;}}
+@media(max-width:480px){.hero h2{font-size:1.6rem;} .hero p{font-size:0.9rem;} .product-card img{height:180px;}}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Niaz Honey Pot Ltd</h1>
+<div class="hamburger" onclick="toggleMenu()">
+<div></div>
+<div></div>
+<div></div>
+</div>
+<nav id="navMenu">
+<a href="index.html" class="active">Home</a>
+<a href="about.html">About Us</a>
+<a href="product.html">Products</a>
+<a href="health.html">Health Benefits</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h2>Pure Honey, Naturally Harvested</h2>
+<p>Experience the richness of West Nile’s finest honey and natural products.</p>
+<button onclick="location.href='product.html'">Explore Products</button>
+</div>
+</section>
+
+<section class="about">
+<div class="card" style="background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('K1.jpg') center/cover no-repeat;">
+<h3>100% Natural</h3>
+<p>Raw honey and beeswax harvested with care from sustainable hives. Each batch is tested for purity and maximum health benefits.</p>
+</div>
+<div class="card" style="background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('K2.jpg') center/cover no-repeat;">
+<h3>Sustainable</h3>
+<p>We protect bees and the environment while providing top-quality products. Eco-friendly methods ensure long-term health for the ecosystem.</p>
+</div>
+<div class="card" style="background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('K3.webp') center/cover no-repeat;">
+<h3>Health & Beauty</h3>
+<p>Boosts immunity, nourishes skin, and promotes overall wellness. Use our products daily for natural vitality and glow.</p>
+</div>
+</section>
+
+<section class="products">
+<h2>Our Products</h2>
+<div class="products-grid">
+<div class="product-card">
+<img src="pic2.webp" alt="Golden Honey" loading="lazy">
+<div class="info">
+<h4>Golden Honey</h4>
+<p>Raw, unprocessed honey straight from the hive.</p>
+</div>
+</div>
+<div class="product-card">
+<img src="pic3.webp" alt="Honey Wine" loading="lazy">
+<div class="info">
+<h4>Honey Wine</h4>
+<p>Smooth, slightly sweet, naturally brewed from honey.</p>
+</div>
+</div>
+<div class="product-card">
+<img src="pic1.webp" alt="Beeswax Jelly" loading="lazy">
+<div class="info">
+<h4>Beeswax Jelly</h4>
+<p>Gentle and nourishing for sensitive skin, made with natural oils.</p>
+</div>
+</div>
+<div class="product-card">
+<img src="IMG1.jpg" alt="Propolis Drops" loading="lazy">
+<div class="info">
+<h4>Propolis Drops</h4>
+<p>Powerful immune support with tiny drops of natural healing power.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="benefits">
+<h2>Health Benefits</h2>
+<div class="benefit-cards">
+<div class="benefit-card">
+<h4>Boosts Immunity</h4>
+<p>Natural protection and support for your immune system.</p>
+</div>
+<div class="benefit-card">
+<h4>Rich in Antioxidants</h4>
+<p>Helps fight free radicals and promotes overall health.</p>
+</div>
+<div class="benefit-card">
+<h4>Supports Healthy Skin</h4>
+<p>Moisturizes, soothes, and protects skin naturally.</p>
+</div>
+<div class="benefit-card">
+<h4>Natural Energy</h4>
+<p>A healthy boost of energy without artificial additives.</p>
+</div>
+</div>
+</section>
+
+<footer>
+<p>&copy; 2025 Niaz Honey Pot Ltd | All Rights Reserved</p>
+
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('navMenu').classList.toggle('show');}
+
+// Scroll animations
+const faders = document.querySelectorAll('.card, .product-card, .benefit-card');
+const appearOptions={threshold:0.1, rootMargin:"0px 0px -50px 0px"};
+const appearOnScroll=new IntersectionObserver(function(entries,observer){
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('visible'); observer.unobserve(entry.target);}
+});
+},appearOptions);
+faders.forEach(fader=>{appearOnScroll.observe(fader);});
+</script>
+
+</body>
+</html>

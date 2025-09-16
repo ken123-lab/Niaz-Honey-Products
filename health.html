@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Discover the health benefits of pure honey and natural products from Niaz Honey Pot Ltd." />
+  <meta name="author" content="Mr Ken" />
+  <title>Health Benefits | Niaz Honey Pot Ltd</title>
+  <link rel="icon" type="image/png" href="niaz.png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: #fff8dc;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(34, 139, 34, 0.95);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-size: 2rem;
+      transition: transform 0.4s ease, color 0.3s ease;
+      cursor: pointer;
+    }
+    header h1:hover {
+      transform: scale(1.05);
+      color: #ffd700;
+      animation: h1bounce 0.6s;
+    }
+    @keyframes h1bounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    nav a {
+      padding: 8px 12px;
+      color: white;
+      font-weight: 500;
+      transition: 0.3s;
+      border-radius: 5px;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #ffd700;
+      border-bottom: 2px solid #ffd700;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+    }
+
+    .hero {
+      height: 60vh;
+      background: url('A4.webp') center/cover no-repeat;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      padding: 0 20px;
+    }
+    .hero-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+
+    .benefits-section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .benefits-section h2 {
+      text-align: center;
+      color: green;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .benefit-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .benefit-card {
+      background: #fdf5e6;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .benefit-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.8s ease;
+    }
+    .benefit-card:hover {
+      transform: scale(1.05);
+      background: rgba(253, 245, 230, 0.95);
+    }
+    .benefit-card h4 {
+      color: green;
+      margin-bottom: 10px;
+    }
+    .benefit-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .benefit-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: green;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: white;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+    footer a:hover {
+      color: #ffd700;
+    }
+
+    @media(max-width: 768px) {
+      .hero-content h2 { font-size: 2rem; }
+      .hero-content p { font-size: 1rem; }
+      nav { flex-direction: column; display: none; width: 100%; gap: 10px; margin-top: 10px; }
+      nav.show { display: flex; }
+      .hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 onclick="location.href='index.html'">Niaz Honey Pot Ltd</h1>
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="product.html">Products</a>
+    <a href="health.html" class="active">Health Benefits</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>Health Benefits of Our Natural Products</h2>
+    <p>Discover how our beeswax jelly and propolis tincture can transform your health — naturally.</p>
+  </div>
+</section>
+
+<section class="benefits-section">
+  <h2>Why Our Natural Products Matter</h2>
+  <div class="benefit-cards">
+
+    <!-- Beeswax Jelly -->
+    <div class="benefit-card">
+      <img src="A1.webp" alt="Beeswax Jelly Use" loading="lazy" />
+      <h4>Beeswax Jelly</h4>
+      <p>Beeswax Jelly is a multipurpose skin solution made from pure, natural beeswax. It is highly effective in relieving body itching and treating skin rashes, including diaper rashes in babies. Its soothing and anti-inflammatory properties make it an excellent remedy for irritated skin.</p>
+      <p>It also helps reduce the appearance of wrinkles and smoothens the skin, leaving it soft and healthy. Regular application works wonders on cracked heels and protects the skin from harmful sun exposure and heat burns.</p>
+      <p>Beyond skincare, Beeswax Jelly also softens hair and supports healthy hair growth. Most importantly, it is gentle and safe for babies’ delicate skin, making it a must-have for natural baby care.</p>
+    </div>
+
+    <!-- Propolis Tincture – Internal -->
+    <div class="benefit-card">
+      <img src="A2.jpg" alt="Propolis Internal Benefits" loading="lazy" />
+      <h4>Propolis Tincture (Internal Benefits)</h4>
+      <p>Propolis Tincture is a powerful natural remedy known for its wide range of internal health benefits. It helps in healing ulcers and provides relief from persistent toothaches. Its anti-allergic properties make it beneficial for those with seasonal or chronic allergies.</p>
+      <p>It treats sinus infections, lowers high blood pressure, and helps regulate blood sugar levels in diabetic patients. Propolis is also effective in relieving symptoms of arthritis such as joint pain, stiffness, and swelling. It soothes stomach pains, eliminates excess gas, and supports colon health — including prevention of colon cancer.</p>
+      <p>Additionally, it helps improve eyesight and provides a strong boost to the immune system, protecting the body against various illnesses.</p>
+    </div>
+
+    <!-- Propolis Tincture – External & Other -->
+    <div class="benefit-card">
+      <img src="A3.webp" alt="Propolis External and Animal Health" loading="lazy" />
+      <h4>Propolis Tincture (External & Animal Health)</h4>
+      <p>Externally, Propolis Tincture accelerates healing of cuts and wounds of all types. It has antifungal properties that combat candida infections and is useful for reducing menstrual cramps.</p>
+      <p>It also aids asthma patients by easing difficulty in breathing. Remarkably, propolis can help cure terminal diseases in livestock such as chickens, cows, and goats, making it invaluable for farmers.</p>
+      <p>Further benefits include unblocking veins and tubes within the body, cleansing internal organs, and improving overall vitality and health.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Niaz Honey Pot Ltd | Designed by Mr Ken</p>
+  <p>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About Us</a> |
+    <a href="product.html">Products</a> |
+    <a href="health.html">Health Benefits</a> |
+    <a href="contact.html">Contact Us</a>
+  </p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navMenu').classList.toggle('show');
+  }
+
+  // Scroll animation for benefit cards
+  function revealOnScroll() {
+    const cards = document.querySelectorAll('.benefit-card');
+    const windowHeight = window.innerHeight;
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      if (cardTop < windowHeight - 100) {
+        card.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
+
+</body>
+</html>
