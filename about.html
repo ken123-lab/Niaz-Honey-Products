@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="About Niaz Honey Pot Ltd - Pure honey and natural products from West Nile">
-<meta name="author" content="Mr Ken">
-<title>About Us | Niaz Honey Pot Ltd</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Buy 100% pure honey and natural honey products from West Nile. Raw honey, honey wine, propolis, and more.">
+  <meta name="author" content="Mr Ken">
+  <title>Niaz Honey Pot Ltd | Pure Honey & Natural Products from West Nile</title>
+  <link rel="icon" type="image/png" href="niaz.png">
+
+  <meta property="og:title" content="Niaz Honey Pot Ltd | Pure Honey from West Nile">
+  <meta property="og:description" content="Experience the richness of West Nile’s finest honey and natural products.">
+  <meta property="og:image" content="C1.webp">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Niaz Honey Pot Ltd | Pure Honey from West Nile">
+  <meta name="twitter:description" content="Experience the richness of West Nile’s finest honey and natural products.">
+  <meta name="twitter:image" content="C1.webp">
+
+  <meta name="theme-color" content="#228B22">
 <link rel="icon" type="image/png" href="niaz.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
@@ -13,7 +27,7 @@ body{background:#fff8dc;color:#333;line-height:1.6;}
 a{text-decoration:none;color:inherit;}
 img{max-width:100%;display:block;}
 
-/* Header */
+
 header{position: sticky; top:0; z-index:1000;background: rgba(34,139,34,0.95); color:white; display:flex; justify-content:space-between; align-items:center; padding:10px 20px; flex-wrap:wrap;}
 header h1{font-size:2rem; cursor:pointer; transition:0.3s;}
 header h1:hover{color:#ffd700; transform:scale(1.05);}
@@ -23,7 +37,6 @@ nav a:hover, nav a.active{color:#ffd700; border-bottom:2px solid #ffd700; backgr
 .hamburger{display:none; flex-direction:column; cursor:pointer; gap:5px;}
 .hamburger div{width:25px; height:3px; background:white; border-radius:2px;}
 
-/* Sections with small space around images */
 section{
   position:relative;
   display:flex;
@@ -53,13 +66,12 @@ section .content{
 section h2{font-size:2.5rem; margin-bottom:20px;}
 section p{font-size:1.1rem; line-height:1.7; text-align:justify; margin-bottom:15px;}
 
-/* Backgrounds full coverage */
+
 #award1{background:url('B1.webp') center center/cover no-repeat;}
 #award2{background:url('B2.webp') center center/cover no-repeat;}
 #award3{background:url('B3.webp') center center/cover no-repeat;}
 #award4{background:url('B4.webp') center center/cover no-repeat;}
 
-/* Fun Fact Box with animation */
 .fun-fact{
   position:relative;
   background:rgba(255,215,0,0.85);
@@ -81,12 +93,12 @@ section p{font-size:1.1rem; line-height:1.7; text-align:justify; margin-bottom:1
   transform:translateY(0);
 }
 
-/* Footer */
+
 footer{background:green; color:white; text-align:center; padding:20px;}
 footer a{color:white; margin:0 10px; transition:0.3s;}
 footer a:hover{color:#ffd700;}
 
-/* Responsive */
+
 @media(max-width:768px){section h2{font-size:2rem;} section p{font-size:1rem;}}
 @media(max-width:480px){section h2{font-size:1.6rem;} section p{font-size:0.95rem;}}
 </style>
@@ -109,7 +121,7 @@ footer a:hover{color:#ffd700;}
 </nav>
 </header>
 
-<!-- Section 1: Founder Story -->
+
 <section id="award2">
 <div class="content">
 <h2>Our Founder</h2>
@@ -119,10 +131,10 @@ footer a:hover{color:#ffd700;}
 </div>
 </section>
 
-<!-- Fun Fact after Founder Section -->
+
 <div class="fun-fact">🐝 A single honeybee produces only about 1/12th of a teaspoon of honey in its lifetime.</div>
 
-<!-- Section 2: First Award -->
+
 <section id="award1">
 <div class="content">
 <h2>2018: Most Outstanding Student in Beekeeping</h2>
@@ -132,10 +144,9 @@ footer a:hover{color:#ffd700;}
 </div>
 </section>
 
-<!-- Fun Fact after 2018 Award -->
 <div class="fun-fact">🍯 Our honey wine ferments naturally — no artificial additives, preserving the pure taste of honey.</div>
 
-<!-- Section 3: Regional Award -->
+
 <section id="award3">
 <div class="content">
 <h2>2024: Best Farmer – West Nile</h2>
@@ -145,10 +156,8 @@ footer a:hover{color:#ffd700;}
 </div>
 </section>
 
-<!-- Fun Fact after 2024 Award -->
 <div class="fun-fact">🍯 Beeswax jelly nourishes skin naturally and keeps it soft and glowing.</div>
 
-<!-- Section 4: Innovation Award -->
 <section id="award4">
 <div class="content">
 <h2>2025: Best Innovator</h2>
@@ -158,7 +167,7 @@ footer a:hover{color:#ffd700;}
 </div>
 </section>
 
-<!-- Fun Fact after 2025 Award -->
+
 <div class="fun-fact">🌱 All our products are sustainably harvested, ensuring bees and environment thrive.</div>
 
 <footer>
@@ -169,7 +178,7 @@ footer a:hover{color:#ffd700;}
 <script>
 function toggleMenu(){document.getElementById('navMenu').classList.toggle('show');}
 
-// Scroll animations for fun facts
+
 const funFacts = document.querySelectorAll('.fun-fact');
 const appearOptions = {threshold:0.1, rootMargin:"0px 0px -50px 0px"};
 
@@ -187,3 +196,4 @@ funFacts.forEach(fact => appearOnScroll.observe(fact));
 
 </body>
 </html>
+
