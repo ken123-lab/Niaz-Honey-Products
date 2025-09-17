@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Niaz Honey Pot Ltd Products - Pure honey and natural products from West Nile">
-<meta name="author" content="Mr Ken">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Buy 100% pure honey and natural honey products from West Nile. Raw honey, honey wine, propolis, and more.">
+  <meta name="author" content="Mr Ken">
+
+  <meta property="og:title" content="Niaz Honey Pot Ltd | Pure Honey from West Nile">
+  <meta property="og:description" content="Experience the richness of West Nile’s finest honey and natural products.">
+  <meta property="og:image" content="C1.webp">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Niaz Honey Pot Ltd | Pure Honey from West Nile">
+  <meta name="twitter:description" content="Experience the richness of West Nile’s finest honey and natural products.">
+  <meta name="twitter:image" content="C1.webp">
+
+  <meta name="theme-color" content="#228B22">
 <title>Products | Niaz Honey Pot Ltd</title>
 <link rel="icon" type="image/png" href="niaz.png">
 <style>
@@ -13,7 +26,7 @@ body{background:#fff8dc;color:#333;line-height:1.6;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
 img{max-width:100%;display:block;}
 
-/* Header */
+
 header{position: sticky; top:0; z-index:1000;background: rgba(34,139,34,0.95); color:white; display:flex; justify-content:space-between; align-items:center; padding:10px 20px; flex-wrap:wrap;}
 header h1{font-size:2rem; cursor:pointer; transition:0.3s;}
 header h1:hover{color:#ffd700; transform:scale(1.05);}
@@ -23,7 +36,6 @@ nav a:hover, nav a.active{color:#ffd700; border-bottom:2px solid #ffd700; backgr
 .hamburger{display:none; flex-direction:column; cursor:pointer; gap:5px;}
 .hamburger div{width:25px; height:3px; background:white; border-radius:2px;}
 
-/* Carousel */
 .carousel {
   position: relative;
   width: 100%;
@@ -115,7 +127,7 @@ footer a:hover{color:#ffd700;}
 </header>
 
 <div class="carousel">
-  <!-- Slides with .webp images -->
+  
   <div class="slide active" style="background-image:url('P1.webp');"><div class="slide-content"><p>Rich jelly made from natural ingredients, perfect for nourishing your skin and enhancing beauty routines.</p></div></div>
   <div class="slide" data-bg="P2.webp"><div class="slide-content"><p>A unique combination of nourishing jelly and beeswax, ideal for skincare and culinary uses.</p></div></div>
   <div class="slide" data-bg="P3.webp"><div class="slide-content"><p>Fresh, sun-ripened grape fruits harvested sustainably, bursting with natural sweetness.</p></div></div>
@@ -157,7 +169,6 @@ let dots = document.querySelectorAll('.dot');
 let current = 0;
 let slideInterval = setInterval(nextSlide, 12000); // 12s
 
-// Lazy-load function
 function loadSlideBg(n){
   const slide = slides[n];
   if(slide.dataset.bg){
@@ -193,9 +204,9 @@ function goToSlide(n){
   slideInterval = setInterval(nextSlide, 12000);
 }
 
-// Load first slide immediately
 loadSlideBg(0);
 </script>
 
 </body>
 </html>
+
