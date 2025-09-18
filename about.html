@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Buy 100% pure honey and natural honey products from West Nile. Raw honey, honey wine, propolis, and more.">
   <meta name="author" content="Mr Ken">
@@ -18,7 +18,7 @@
   <meta name="twitter:image" content="C1.webp">
 
   <meta name="theme-color" content="#228B22">
-  <title>About Us | Niaz Honey Pot Ltd</title>
+<title>About Us | Niaz Honey Pot Ltd</title>
 <link rel="icon" type="image/png" href="niaz.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
@@ -44,10 +44,9 @@ section{
   text-align:center;
   color:white;
   overflow:hidden;
-  min-height:100vh;
-  margin:10px;
+  min-height:90vh;
+  padding:40px 20px; 
   border-radius:8px;
-  padding:50px 20px;
 }
 section::before{
   content:"";
@@ -69,15 +68,16 @@ section p{font-size:1.1rem; line-height:1.7; text-align:justify; margin-bottom:1
 #award1{background:url('B1.webp') center center/cover no-repeat;}
 #award2{background:url('B2.webp') center center/cover no-repeat;}
 #award3{background:url('B3.webp') center center/cover no-repeat;}
-#award4{background:url('Honey.webp') center center/cover no-repeat;}
+#award4{background:url('Honey.webp') center 10% / cover no-repeat;} 
+#award4::before{background: rgba(0,0,0,0.3);} 
 
 .fun-fact{
   position:relative;
   background:rgba(255,215,0,0.85);
   color:#333;
-  padding:15px 20px;
-  margin:10px auto;
-  width:calc(100% - 40px);
+  padding:20px 30px;
+  margin:20px auto;
+  width:90%;
   max-width:none;
   border-radius:12px;
   font-weight:500;
@@ -97,8 +97,46 @@ footer{background:green; color:white; text-align:center; padding:20px;}
 footer a{color:white; margin:0 10px; transition:0.3s;}
 footer a:hover{color:#ffd700;}
 
+#whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  border-radius:50%;
+  overflow:hidden;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  cursor:pointer;
+  transition: transform 0.3s;
+}
+#whatsapp img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+#whatsapp:hover{
+  transform:scale(1.1);
+}
 
-@media(max-width:768px){section h2{font-size:2rem;} section p{font-size:1rem;}}
+
+@media(max-width:768px){
+  section h2{font-size:2rem;}
+  section p{font-size:1rem;}
+  nav{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    background:rgba(34,139,34,0.95);
+    text-align:center;
+  }
+  nav.show{
+    display:flex;
+  }
+  .hamburger{
+    display:flex;
+  }
+}
 @media(max-width:480px){section h2{font-size:1.6rem;} section p{font-size:0.95rem;}}
 </style>
 </head>
@@ -106,7 +144,7 @@ footer a:hover{color:#ffd700;}
 
 <header>
 <h1>Niaz Honey Pot Ltd</h1>
-<div class="hamburger" onclick="toggleMenu()">
+<div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">
 <div></div>
 <div></div>
 <div></div>
@@ -120,7 +158,6 @@ footer a:hover{color:#ffd700;}
 </nav>
 </header>
 
-
 <section id="award2">
 <div class="content">
 <h2>Our Founder</h2>
@@ -130,9 +167,7 @@ footer a:hover{color:#ffd700;}
 </div>
 </section>
 
-
 <div class="fun-fact">🐝 A single honeybee produces only about 1/12th of a teaspoon of honey in its lifetime.</div>
-
 
 <section id="award1">
 <div class="content">
@@ -169,14 +204,17 @@ footer a:hover{color:#ffd700;}
 
 <div class="fun-fact">🌱 All our products are sustainably harvested, ensuring bees and environment thrive.</div>
 
+
 <footer>
 <p>&copy; 2025 Niaz Honey Pot Ltd | All Rights Reserved</p>
-
 </footer>
+
+<a href="https://wa.me/256772515724" target="_blank" id="whatsapp">
+  <img src="wts.webp" alt="WhatsApp">
+</a>
 
 <script>
 function toggleMenu(){document.getElementById('navMenu').classList.toggle('show');}
-
 
 const funFacts = document.querySelectorAll('.fun-fact');
 const appearOptions = {threshold:0.1, rootMargin:"0px 0px -50px 0px"};
@@ -184,7 +222,9 @@ const appearOptions = {threshold:0.1, rootMargin:"0px 0px -50px 0px"};
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
-      entry.target.classList.add('visible');
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, Array.from(funFacts).indexOf(entry.target) * 300);
       observer.unobserve(entry.target);
     }
   });
@@ -195,6 +235,3 @@ funFacts.forEach(fact => appearOnScroll.observe(fact));
 
 </body>
 </html>
-
-
-
